@@ -1,10 +1,10 @@
 class RegistrationsController < ApplicationController
     include CurrentUserConcern
-    # def index
-    #     @user = User.all
+    def index
+        @user = User.all
     
-    #     render json: @user
-    #   end
+        render json: @user
+      end
 
     def create
         user = User.create!(
