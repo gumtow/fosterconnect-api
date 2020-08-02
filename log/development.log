@@ -12373,3 +12373,19 @@ Processing by SessionsController#logout as HTML
 Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 846)
 
 
+Started GET "/logged_in" for ::1 at 2020-08-02 08:26:46 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#logged_in as HTML
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-02 11:18:53 -0500
+Processing by SessionsController#logged_in as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 259)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-02 11:20:54 -0500
+Processing by SessionsController#logged_in as HTML
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 253)
+
+
