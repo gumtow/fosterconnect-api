@@ -1,5 +1,5 @@
 if Rails.env == "production"
-    Rails.application.config.session_store :cookie_store, key: "_authentication_app", :domain => 'fosterconnect-api.herokuapp.com', same_site: :lax
+    Rails.application.config.session_store :cookie_store, key: "_authentication_app", :domain => 'fosterconnect-api.herokuapp.com', same_site: :none, secure: :secure
 else
     Rails.application.config.session_store :cookie_store, key: "_authentication_app"
 end
@@ -17,7 +17,7 @@ module Rack
             rfc2822(value[:expires].clone.gmtime) if value[:expires]
 
         # Make it always secure, even in HTTP
-        # secure = "; secure"  if value[:secure]
+        secure = "; secure"  if value[:secure]
         secure = "; secure"
 
         httponly = "; HttpOnly" if value[:httponly]
