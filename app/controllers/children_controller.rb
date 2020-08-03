@@ -43,7 +43,10 @@ class ChildrenController < ApplicationController
   # PATCH/PUT /children/1
   # PATCH/PUT /children/1.json
   def update
-    @child.update(child_params)
+    @child.update(
+      name: params['name'],
+      status: params['status']
+    )
   end
 
   # DELETE /children/1
