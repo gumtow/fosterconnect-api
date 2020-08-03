@@ -55,4 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "rack-cors", :require => 'rack/cors'
 
+# external api to upload pics and docs
 gem 'cloudinary'
+
+gem 'rack', '~> 2.2', '>= 2.2.3'
