@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     def create 
         image = Cloudinary::Uploader.upload(params[:image])
         file = Cloudinary::Uploader.upload(params[:file])
-        item = Item.create(image: image["url"], child_id: params["child_id"], file: file["url"])
+        item = Item.create(image: image["secure_url"], child_id: params["child_id"], file: file["secure_url"])
         render json: item
     end
 end
