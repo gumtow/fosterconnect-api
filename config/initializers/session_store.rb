@@ -17,7 +17,7 @@ module Rack
         secure = "; secure"  if value[:secure]
         secure = "; secure"
 
-        httponly = "; HttpOnly" if value[:httponly]
+        # httponly = "; HttpOnly" if value[:httponly]
         same_site =
             case value[:same_site]
             when false, nil
