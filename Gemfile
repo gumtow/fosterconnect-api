@@ -59,3 +59,5 @@ gem "rack-cors", :require => 'rack/cors'
 gem 'cloudinary'
 
 gem 'rack', '~> 2.2', '>= 2.2.3'
+
+gem 'awesome_print', :require => 'ap'

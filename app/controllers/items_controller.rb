@@ -6,9 +6,23 @@ class ItemsController < ApplicationController
     end
         
     def create 
-        image = Cloudinary::Uploader.upload(params[:image])
-        file = Cloudinary::Uploader.upload(params[:file])
-        item = Item.create(image: image["secure_url"], child_id: params["child_id"], file: file["secure_url"])
-        render json: item
+        puts params
+        if params[:image]
+            image = Cloudinary::Uploader.upload(params[:image])
+            item = Item.create(image: image["secure_url"], child_id: params["child_id"])
+            render json: item
+        end
+        if params[:file]
+            file = Cloudinary::Uploader.upload(params[:file])
+            item = Item.create(file: file["secure_url"], child_id: params["child_id"])
+            render json: item
+        end
+        
+        
     end
+
+    def destroy
+        Item.find(params[:id]).destroy
+      end
+
 end

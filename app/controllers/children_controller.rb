@@ -27,7 +27,15 @@ class ChildrenController < ApplicationController
   # POST /children
   # POST /children.json
   def create
-    @child = Child.new(child_params)
+    # p child_params
+    # p params
+    # if params[:image]
+    #   image = Cloudinary::Uploader.upload(params[:image])
+    #   child = Child.new(image: image["secure_url"], status: params["status"], description: params["description"], user_id: params["user_id"], name: params["name"])
+    #   render json: child
+    # end
+      @child = Child.new(child_params)
+    
 
     respond_to do |format|
       if @child.save
@@ -45,7 +53,8 @@ class ChildrenController < ApplicationController
   def update
     @child.update(
       name: params['name'],
-      status: params['status']
+      status: params['status'],
+      description: params['description']
     )
   end
 
@@ -65,8 +74,8 @@ class ChildrenController < ApplicationController
       @child = Child.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # # Only allow a list of trusted parameters through.
     def child_params
-      params.require(:child).permit(:name, :status, :pictures, :documents, :user_id)
+      params.require(:child).permit(:name, :status, :description, :image, :user_id)
     end
 end
