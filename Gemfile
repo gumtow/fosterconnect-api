@@ -58,6 +58,6 @@ gem "rack-cors", :require => 'rack/cors'
 # external api to upload pics and docs
 gem 'cloudinary'
 
-gem 'rack', '~> 2.2', '>= 2.2.3'
+gem 'rack', '~> 2.2'
 
 gem 'awesome_print', :require => 'ap'
